@@ -36,7 +36,7 @@ def index():
         user = User(username=username, password=password, name=name, id_num=id_num, email=email, phone=phone)
         db.session.add(user)
         db.session.commit()
-        return redirect(url_for(index))
+        return redirect(url_for(".index"))
     return render_template("index.html", form=form)
 
 
