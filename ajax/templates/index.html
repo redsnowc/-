@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+</head>
+<body>
+<form action="{{ url_for('index') }}" method="post" id="myForm">
+    <h1>FORM
+        <span>表单验证示例</span>
+    </h1>
+    {{ form.csrf_token }}
+    <label>
+        <span class="title">用户名：</span>
+        <input type="text" name="username" id="username"
+               placeholder="用户名昵称"
+               value="{{ form.data['username'] }}">
+        {% for message in form.username.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+    <label>
+        <span class="title">登录密码：</span>
+        <input type="password" name="password" id="password"
+               placeholder="请输入密码"
+               value="{{ form.data['password'] }}">
+        {% for message in form.password.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+    <label>
+        <span class="title">确认密码：</span>
+        <input type="password" name="repeat_password" id="repeat_password"
+               placeholder="请重复密码"
+               value="{{ form.data['repeat_password'] }}">
+        {% for message in form.repeat_password.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+    <label>
+        <span class="title">姓名：</span>
+        <input type="text" name="name" id="name"
+               placeholder="请输入真实姓名"
+               value="{{ form.data['name'] }}">
+        {% for message in form.name.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+    <label>
+        <span class="title">身份证：</span>
+        <input type="text" name="id_num" id="id_num"
+               placeholder="请输入身份证号码"
+               value="{{ form.data['id_num'] }}">
+        {% for message in form.id_num.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+    <label>
+        <span class="title">邮箱：</span>
+        <input type="text" name="email" id="email"
+               placeholder="请输入邮箱"
+               value="{{ form.data['email'] }}">
+        {% for message in form.email.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+    <label>
+        <span class="title">手机号码：</span>
+        <input type="text" name="phone" id="phone"
+               placeholder="请输入手机号码"
+               value="{{ form.data['phone'] }}">
+        {% for message in form.phone.errors %}
+            <span class="message" style="color: red;">{{ message }}</span>
+        {% endfor %}
+    </label>
+        <span class="title">&nbsp;</span>
+        <input type="submit" class="button" value="提交">
+</form>
+<script type="text/javascript" src="{{ url_for('static', filename='js/validator.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/ajax.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

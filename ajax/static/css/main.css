@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+form {
+    width: 500px;
+    background: #f7f7f7;
+    color: #888;
+    margin: 50px auto 0;
+}
+
+h1 {
+    border-bottom: 1px solid #E4E4E4;
+    padding: 0 0 10px 40px;
+    margin-bottom: 30px;
+}
+
+h1 > span {
+    display: block;
+    font-size: 20px;
+}
+
+label {
+    display: block;
+}
+
+.title {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.message {
+    display: block;
+    margin-bottom: 11px;
+    width: 70%;
+    padding-left: 115px;
+    font-size: 8px;
+}
+
+.complexNotion {
+    display: none;
+    padding-left: 115px;
+    margin-bottom: 11px;
+}
+
+.complexNotion > span {
+    display: inline-block;
+    width: 30px;
+    height: 7px;
+    margin-right: 3px;
+}
+
+.simple {
+    background: red;
+}
+
+.medium {
+    background: #778899;
+}
+
+.complex {
+    background: #778899;
+}
+
+label > input {
+    border: 1px solid #DADADA;
+    height: 30px;
+    margin-bottom: 17px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    -webkit-box-shadow: inset 0 1px 4px #ECECEC;
+       -moz-box-shadow: inset 0 1px 4px #ECECEC;
+            box-shadow: inset 0 1px 4px #ECECEC;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    background: #e2465a;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button:hover {
+    background: #CF7A7A
+}
+
+.button:active {
+    box-shadow: unset;
+}
