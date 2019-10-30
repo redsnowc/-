@@ -16,7 +16,6 @@ app.config["SEND_FILE_MAX_AGE_DEFAULT"] = timedelta(seconds=1)
 db.init_app(app)
 
 
-
 @app.cli.command()
 def initdb():
     db.create_all()
