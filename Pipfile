@@ -7,8 +7,10 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+mysqlclient = "*"
 flask-wtf = "*"
-flask-sqlalchemy = "*"
+flask-migrate = "*"
+cymysql = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"

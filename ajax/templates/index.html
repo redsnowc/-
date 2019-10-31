@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" type="text/css">
 </head>
 <body>
 <form action="{{ url_for('index') }}" method="post" id="myForm">
@@ -49,10 +50,10 @@
     </label>
     <label>
         <span class="title">身份证：</span>
-        <input type="text" name="id_num" id="id_num"
+        <input type="text" name="id_card" id="id_card"
                placeholder="请输入身份证号码"
-               value="{{ form.data['id_num'] }}">
-        {% for message in form.id_num.errors %}
+               value="{{ form.data['id_card'] }}">
+        {% for message in form.id_card.errors %}
             <span class="message" style="color: red;">{{ message }}</span>
         {% endfor %}
     </label>
@@ -77,8 +78,10 @@
         <span class="title">&nbsp;</span>
         <input type="submit" class="button" value="提交">
 </form>
-<script type="text/javascript" src="{{ url_for('static', filename='js/validator.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/ajax.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='lib/zepto.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/t.js') }}"></script>
+{#<script type="text/javascript" src="{{ url_for('static', filename='js/validator.js') }}"></script>#}
+{#<script type="text/javascript" src="{{ url_for('static', filename='js/ajax.js') }}"></script>#}
+{#<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>#}
 </body>
 </html>

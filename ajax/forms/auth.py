@@ -5,13 +5,13 @@ from model import User
 
 
 class UserForm(FlaskForm):
-    username = StringField(validators=[DataRequired(), Length(6, 18)])
-    password = PasswordField(validators=[DataRequired(), Length(6, 20), EqualTo('repeat_password')])
-    repeat_password = PasswordField(validators=[DataRequired()])
-    name = StringField(validators=[DataRequired(), Length(3, 30)])
-    id_num = StringField(validators=[DataRequired()])
-    email = StringField(validators=[DataRequired(), Email()])
-    phone = StringField(validators=[DataRequired(), Length(11, 11)])
+    username = StringField(validators=[DataRequired(message="用户名不能为空"), Length(6, 18)])
+    password = PasswordField(validators=[DataRequired(message="密码不能为空"), Length(6, 20), EqualTo('repeat_password')])
+    repeat_password = PasswordField(validators=[DataRequired(message="请重复密码")])
+    name = StringField(validators=[DataRequired(message="姓名不能为空"), Length(3, 30)])
+    id_card = StringField(validators=[DataRequired(message="身份证不能为空")])
+    email = StringField(validators=[DataRequired(message="邮箱不能为空"), Email()])
+    phone = StringField(validators=[DataRequired(message="手机号不能为空"), Length(11, 11)])
 
 
     def validate_username(self, filed):
@@ -22,12 +22,12 @@ class UserForm(FlaskForm):
     #     if User.query.filter(User.name == filed.data).first():
     #         raise ValidationError("姓名已存在")
 
-    def validate_id_num(self, filed):
+    def validate_id_card(self, filed):
         if len(filed.data) != 15 and len(filed.data) != 18:
             raise ValidationError("身份证输入有误")
 
-    def validate_id_num(self, filed):
-        if User.query.filter(User.id_num == filed.data).first():
+    def validate_id_card(self, filed):
+        if User.query.filter(User.id_card == filed.data).first():
             raise ValidationError("身份证已存在")
 
     def validate_email(self, filed):
