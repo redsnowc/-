@@ -8,7 +8,7 @@ class UserForm(FlaskForm):
     username = StringField(validators=[DataRequired(message="用户名不能为空"), Length(6, 18)])
     password = PasswordField(validators=[DataRequired(message="密码不能为空"), Length(6, 20), EqualTo('repeat_password')])
     repeat_password = PasswordField(validators=[DataRequired(message="请重复密码")])
-    name = StringField(validators=[DataRequired(message="姓名不能为空"), Length(3, 30)])
+    name = StringField(validators=[DataRequired(message="姓名不能为空"), Length(2, 30)])
     id_card = StringField(validators=[DataRequired(message="身份证不能为空")])
     email = StringField(validators=[DataRequired(message="邮箱不能为空"), Email()])
     phone = StringField(validators=[DataRequired(message="手机号不能为空"), Length(11, 11)])
