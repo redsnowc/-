@@ -16,6 +16,7 @@
         <span class="title">用户名：</span>
         <input type="text" name="username" id="username"
                placeholder="用户名昵称"
+               autocomplete="off"
                value="{{ form.data['username'] }}">
         {% for message in form.username.errors %}
             <span class="message" style="color: red;">{{ message }}</span>
@@ -43,6 +44,7 @@
         <span class="title">姓名：</span>
         <input type="text" name="name" id="name"
                placeholder="请输入真实姓名"
+               autocomplete="off"
                value="{{ form.data['name'] }}">
         {% for message in form.name.errors %}
             <span class="message" style="color: red;">{{ message }}</span>
@@ -52,6 +54,7 @@
         <span class="title">身份证：</span>
         <input type="text" name="id_card" id="id_card"
                placeholder="请输入身份证号码"
+               autocomplete="off"
                value="{{ form.data['id_card'] }}">
         {% for message in form.id_card.errors %}
             <span class="message" style="color: red;">{{ message }}</span>
@@ -61,6 +64,7 @@
         <span class="title">邮箱：</span>
         <input type="text" name="email" id="email"
                placeholder="请输入邮箱"
+               autocomplete="off"
                value="{{ form.data['email'] }}">
         {% for message in form.email.errors %}
             <span class="message" style="color: red;">{{ message }}</span>
@@ -70,6 +74,7 @@
         <span class="title">手机号码：</span>
         <input type="text" name="phone" id="phone"
                placeholder="请输入手机号码"
+               autocomplete="off"
                value="{{ form.data['phone'] }}">
         {% for message in form.phone.errors %}
             <span class="message" style="color: red;">{{ message }}</span>
