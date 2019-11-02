@@ -9,15 +9,15 @@ class Validator {
         this.errorMsg = options.errorMsg || options.equalToMsg || (this._msgTmp(this.tmp) ? this._msgTmp(this.tmp).error : "");
         this.checkboxErrorMsg = options.checkboxErrorMsg;
         this.selectErrorMsg = options.selectErrorMsg;
-        this.radioErrorMsg = options.radioErrorMsg;
+        // this.radioErrorMsg = options.radioErrorMsg;
         this.ajaxUrl = options.ajaxUrl;
         this.ajaxDataKey = options.ajaxDataKey;
         this.ajaxErrorMsg = options.ajaxErrorMsg;
         this.$equalTo = this.$(options.equalTo);
         this.sign = !this.required;
-        this.pwdComplex = options.pwdComplex || false;
+        this.pwdComplex = options.pwdComplex;
         this.type = options.type || "input";
-        this.radioName = options.radioName;
+        // this.radioName = options.radioName;
         this.$messageEl = this._createMessageEl();
         this.$equalEl = null;
         this.$equalElMsgEl = null;
@@ -95,7 +95,7 @@ class Validator {
     }
 
     /*
-    * ajax 请求服务器验证
+    * @inner ajax 请求服务器验证
     * */
     _ajax() {
         this.$.ajax({
