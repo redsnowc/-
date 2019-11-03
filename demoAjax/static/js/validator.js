@@ -96,6 +96,7 @@ class Validator {
 
     /*
     * ajax 请求服务器验证
+    * 服务器端只能返回 {code: 0} or {code: 1}
     * */
     _ajax() {
         this.$.ajax({
